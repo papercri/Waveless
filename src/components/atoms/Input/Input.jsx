@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export const Input = ({ id, value, onChange, placeholder, icon: Icon, ...props }) => (
-  <div className="relative">
+  <div className="relative" role="textbox" aria-label={placeholder}>
     <label htmlFor={id} className="sr-only">
       {placeholder}
     </label>
@@ -15,6 +15,7 @@ export const Input = ({ id, value, onChange, placeholder, icon: Icon, ...props }
       className="w-full border border-brand-dark rounded-full pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-brand-orange focus:ring-brand-orange appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
       inputMode="numeric"
       pattern="[0-9]*"
+      aria-label={placeholder}
       {...props}
     />
   </div>

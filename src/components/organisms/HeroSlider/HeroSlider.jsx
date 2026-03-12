@@ -20,7 +20,7 @@ export const HeroSlider = () => {
   };
 
   return (
-    <section className="hero-slider relative w-full h-[60vh] md:h-[70vh] bg-gray-900 overflow-hidden" aria-label="Carrusel de destinos destacados">
+    <section className="hero-slider relative w-full h-[60vh] md:h-[70vh] bg-gray-900 overflow-hidden" aria-label="Carrusel de destinos destacados" role="region">
       <div 
         className="hero-slider__track flex w-full h-full transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}

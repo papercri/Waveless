@@ -1,16 +1,40 @@
-# React + Vite
+# Waveless - Plataforma de Aventuras
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción del Proyecto
+Waveless es una plataforma web para descubrir y reservar experiencias de aventura en todo el mundo. El objetivo es ofrecer una interfaz moderna, accesible y optimizada para buscadores, cumpliendo con estándares SEO y WCAG.
 
-Currently, two official plugins are available:
+## Decisiones Técnicas
+- **Framework principal:** React (v19) para una UI dinámica y modular.
+- **Build tool:** Vite, por su rapidez en desarrollo y build.
+- **Estilos:** Tailwind CSS, para una gestión eficiente y escalable de estilos.
+- **Iconografía:** Lucide-react y react-icons para iconos accesibles y personalizables.
+- **Metodología:** Estructura por atomic design (atoms, molecules, organisms, templates, pages) para facilitar la reutilización y el mantenimiento.
+- **Accesibilidad:** Se han aplicado roles ARIA, landmarks, y etiquetas semánticas en todos los componentes clave.
+- **SEO:** Meta tags, heading principal h1, y estructura semántica en index.html y componentes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalación y Visualización en Local
+1. **Clona el repositorio:**
+	```bash
+	git clone <url-del-repo>
+	cd prueba-DUX
+	```
+2. **Instala dependencias:**
+	```bash
+	npm install
+	```
+3. **Inicia el servidor de desarrollo:**
+	```bash
+	npm run dev
+	```
+4. **Visualiza el proyecto:**
+	Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-## React Compiler
+## Comentarios Importantes
+- El proyecto está optimizado para accesibilidad y SEO, sin sacrificar diseño ni funcionalidad.
+- La estructura modular facilita la extensión y el mantenimiento.
+- Se recomienda revisar el código fuente para ver la aplicación de WCAG y ARIA.
+- El diseño es responsive y funciona en dispositivos móviles y desktop.
+- Para cualquier duda o mejora, puedes abrir un issue o contactar al autor.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

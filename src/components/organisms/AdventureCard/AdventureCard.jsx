@@ -8,7 +8,7 @@ export const AdventureCard = ({ image, category, location, duration, title, pric
   const [showBreakdown, setShowBreakdown] = useState(false);
 
   return (
-    <article className="adventure-card flex flex-col bg-white rounded-2xl  border border-gray-100 shadow-sm hover:shadow-md transition-shadow relative">
+    <article className="adventure-card flex flex-col bg-white rounded-2xl  border border-gray-100 shadow-sm hover:shadow-md transition-shadow relative" role="article" aria-label={`Aventura: ${title}`}> 
       
       <div className="relative h-48 w-full">
         <img src={image} alt={title} className="w-full h-full object-cover rounded-t-2xl" loading="lazy" />

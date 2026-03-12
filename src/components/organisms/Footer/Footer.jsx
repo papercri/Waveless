@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="footer bg-brand-light pt-12 mt-16 flex flex-col items-center">
+    <footer className="footer bg-brand-light pt-12 mt-16 flex flex-col items-center" role="contentinfo" aria-label="Pie de página">
       <div className="mb-8">
         <a href="/" aria-label="Ir a inicio">
           <span className="text-2xl font-bold text-brand-purple flex items-center gap-2">

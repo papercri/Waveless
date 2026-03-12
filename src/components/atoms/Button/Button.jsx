@@ -12,6 +12,8 @@ export const Button = ({ children, variant = 'reserva', className = '', ...props
   return (
     <button
       className={`${variantStyles[variant]} ${className}`.trim()}
+      role="button"
+      aria-label={typeof children === 'string' ? children : undefined}
       {...props}
     >
       {children}

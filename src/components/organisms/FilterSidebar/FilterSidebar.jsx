@@ -43,7 +43,7 @@ export const FilterSidebar = ({ isOpen, onClose }) => {
   `;
 
   return (
-    <aside className={sidebarClasses} aria-label="Filtros de búsqueda">
+    <aside className={sidebarClasses} aria-label="Filtros de búsqueda" role="complementary">
       {/* Cabecera Móvil (solo visible si está abierto como modal) */}
       <div className="flex lg:hidden items-center justify-between p-4  bg-white sticky top-0 z-10 ">
         <h2 className="text-lg font-bold text-brand-dark">Filtrar mi búsqueda</h2>

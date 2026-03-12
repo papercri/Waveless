@@ -14,7 +14,7 @@ export const PriceBreakdown = ({ isOpen, onClose }) => {
       <div className="
         fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white rounded-2xl shadow-2xl z-50 p-4
         lg:absolute lg:top-auto lg:bottom-full lg:left-0 lg:translate-x-0 lg:translate-y-0 lg:-mb-2 lg:w-80 lg:shadow-xl lg:border lg:border-gray-100
-      ">
+      " role="dialog" aria-modal="true" aria-label="Desglose de precios">
         <div className="flex justify-between items-center mb-4 border-b border-gray-100 pb-2">
           <h4 className="font-bold text-brand-dark">Desglose de precios</h4>
           <button onClick={onClose} className="text-gray-400 hover:text-brand-orange" aria-label="Cerrar desglose">

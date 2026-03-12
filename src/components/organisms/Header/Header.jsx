@@ -17,7 +17,7 @@ export const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="header bg-white relative z-50 shadow-sm">
+    <header className="header bg-white relative z-50 shadow-sm" role="banner" aria-label="Cabecera principal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
         <div className="flex justify-between items-center h-full">
           <div className="header__logo flex-shrink-0 flex items-center">
@@ -69,6 +69,7 @@ export const Header = () => {
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-orange focus:outline-none"
               onClick={toggleMenu}
+              aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             >
               <span className="sr-only">{isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}</span>
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -79,7 +80,7 @@ export const Header = () => {
 
       {/* Menú Móvil / Tablet */}
       {isMenuOpen && (
-        <div className="header__mobile-menu md:hidden absolute top-20 left-0 w-full h-[calc(100vh-5rem)] bg-white border-t border-brand-gray shadow-xl">
+        <div className="header__mobile-menu md:hidden absolute top-20 left-0 w-full h-[calc(100vh-5rem)] bg-white border-t border-brand-gray shadow-xl" role="navigation" aria-label="Menú móvil principal">
           <div className="px-4 pt-4 pb-3 space-y-1 sm:w-80 sm:border-r sm:h-full sm:shadow-md">
             {navItems.map((item) => {
               const isActive = currentPath === item.href;
