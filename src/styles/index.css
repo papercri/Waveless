@@ -14,9 +14,22 @@
   body {
     @apply bg-white text-brand-dark font-sans antialiased;
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
   }
   a, button, [role="button"], input[type="checkbox"] {
     @apply cursor-pointer;
+  }
+  *{
+    box-sizing:border-box
+  }
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
 
