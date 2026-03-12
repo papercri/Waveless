@@ -1,6 +1,46 @@
+import { Button } from '@/components/atoms/Button/Button';
+import { PiMountainsLight, PiGlobeHemisphereEastLight, PiHouseLineLight } from "react-icons/pi";
+import { IoPricetagOutline } from "react-icons/io5";
+import { ChevronDown, ChevronUp, X, Info, Check } from 'lucide-react';
+import { useState } from 'react';
+import { Input } from '@/components/atoms/Input/Input';
+
+// Custom checkbox component with lucide-react Check icon
+function CheckboxWithIcon() {
+  const [checked, setChecked] = useState(false);
+  return (
+    <div className="relative flex items-center justify-center w-5 h-5">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+        className="appearance-none w-5 h-5 border border-gray-300 rounded checked:bg-brand-orange checked:border-brand-orange focus:outline-none focus:ring-2 transition-colors cursor-pointer"
+      />
+      {checked && (
+        <Check strokeWidth={3} className="absolute w-3 h-3 text-white pointer-events-none" />
+      )}
+    </div>
+  );
+}
+
 export const FilterSidebar = ({ isOpen, onClose }) => {
-  // Clases base combinando BEM y Tailwind. 
-  // En móvil ocupa toda la pantalla (fixed), en desktop es un bloque normal relativo al grid.
+  const [openAccordions, setOpenAccordions] = useState({
+    destinos: false,
+    aventura: true,
+    alojamiento: false,
+    precio: true,
+  });
+
+  const toggleAccordion = (key) => {
+    setOpenAccordions((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
+
+  const handleMinPriceChange = (e) => setMinPrice(e.target.value);
+  const handleMaxPriceChange = (e) => setMaxPrice(e.target.value);
+
   const sidebarClasses = `
     filter-sidebar bg-brand-light md:bg-transparent
     ${isOpen ? 'fixed inset-0 z-50 flex flex-col' : 'hidden'} 
@@ -17,7 +57,7 @@ export const FilterSidebar = ({ isOpen, onClose }) => {
           className="p-2 text-gray-500 hover:text-brand-orange focus:outline-none"
           aria-label="Cerrar filtros"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+          <X className="w-6 h-6" />
         </button>
       </div>
 
@@ -26,65 +66,120 @@ export const FilterSidebar = ({ isOpen, onClose }) => {
 
         {/* Grupo: Destinos */}
         <div className="border-b border-gray-200 py-4">
-          <button className="flex w-full items-center justify-between text-left focus:outline-none" aria-expanded="false">
-            <span className="flex items-center gap-2 font-medium text-brand-dark">
-              <span aria-hidden="true">🌎</span> Destinos
+          <button
+            className="flex w-full items-center justify-between text-left focus:outline-none group"
+            aria-expanded={openAccordions.destinos}
+            onClick={() => toggleAccordion('destinos')}
+          >
+            <span className={`flex items-center gap-2 font-medium transition-colors ${openAccordions.destinos ? 'text-brand-orange' : 'text-brand-dark group-hover:text-brand-orange'}`}>
+              <span aria-hidden="true"><PiGlobeHemisphereEastLight className="w-5 h-5" /></span> Destinos
             </span>
-            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            {openAccordions.destinos ? (
+              <ChevronUp className="w-5 h-5 text-brand-orange" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
           </button>
+          {openAccordions.destinos && (
+            <div className="pl-6 py-2 text-sm text-gray-600">Contenido de destinos...</div>
+          )}
         </div>
 
-        {/* Grupo: Aventura (Expandido por defecto) */}
+        {/* Grupo: Aventura */}
         <div className="border-b border-gray-200 py-4">
-          <button className="flex w-full items-center justify-between text-left focus:outline-none mb-4" aria-expanded="true">
-            <span className="flex items-center gap-2 font-medium text-brand-orange">
-              <span aria-hidden="true">⛰️</span> Aventura
+          <button
+            className="flex w-full items-center justify-between text-left focus:outline-none group"
+            aria-expanded={openAccordions.aventura}
+            onClick={() => toggleAccordion('aventura')}
+          >
+            <span className={`flex items-center gap-2 font-medium transition-colors ${openAccordions.aventura ? 'text-brand-orange' : 'text-brand-dark group-hover:text-brand-orange'}`}>
+              <PiMountainsLight className="w-5 h-5" />Aventura
             </span>
-            <svg className="w-5 h-5 text-brand-orange transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            {openAccordions.aventura ? (
+              <ChevronUp className="w-5 h-5 text-brand-orange" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
           </button>
-          
-          <div className="space-y-3 pl-6">
-            {['Quads', 'Parapente', 'Rafting', 'Explora', 'Buceo', 'Paracaídas', 'Snowboard', 'Surf'].map((item) => (
-              <label key={item} className="flex items-center gap-3 cursor-pointer group">
-                <div className="relative flex items-center justify-center w-5 h-5">
-                  <input type="checkbox" className="peer appearance-none w-5 h-5 border border-gray-300 rounded checked:bg-brand-orange checked:border-brand-orange focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-1 transition-colors" />
-                  <svg className="absolute w-3 h-3 text-white pointer-events-none opacity-0 peer-checked:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-                </div>
-                <span className="text-sm text-gray-600 group-hover:text-brand-dark">{item}</span>
-              </label>
-            ))}
-            <button className="text-sm text-brand-purple underline mt-2 hover:text-brand-orange">Ver 21 más</button>
-          </div>
+          {openAccordions.aventura && (
+            <div className="space-y-3 pl-6 pt-4">
+              {['Quads', 'Parapente', 'Rafting', 'Explora', 'Buceo', 'Paracaídas', 'Snowboard', 'Surf'].map((item) => (
+                <label key={item} className="flex items-center gap-3 cursor-pointer group/label">
+                  <CheckboxWithIcon />
+                  <span className="text-sm text-gray-600 group-hover/label:text-brand-dark flex items-center justify-between w-full">
+                    {item}
+                    <Info className="w-4 h-4 text-gray-400 hover:text-brand-purple mr-2" />
+                  </span>
+                </label>
+              ))}
+              <button className="text-sm font-medium text-brand-purple underline mt-4 hover:text-brand-orange transition-colors">Ver 21 más</button>
+            </div>
+          )}
         </div>
 
         {/* Grupo: Alojamiento */}
         <div className="border-b border-gray-200 py-4">
-          <button className="flex w-full items-center justify-between text-left focus:outline-none" aria-expanded="false">
-            <span className="flex items-center gap-2 font-medium text-brand-dark">
-              <span aria-hidden="true">🏨</span> Alojamiento
+          <button
+            className="flex w-full items-center justify-between text-left focus:outline-none group"
+            aria-expanded={openAccordions.alojamiento}
+            onClick={() => toggleAccordion('alojamiento')}
+          >
+            <span className={`flex items-center gap-2 font-medium transition-colors ${openAccordions.alojamiento ? 'text-brand-orange' : 'text-brand-dark group-hover:text-brand-orange'}`}>
+              <PiHouseLineLight className="w-5 h-5" /> Alojamiento
             </span>
-            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+            {openAccordions.alojamiento ? (
+              <ChevronUp className="w-5 h-5 text-brand-orange" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
           </button>
+          {openAccordions.alojamiento && (
+            <div className="pl-6 py-2 text-sm text-gray-600">Contenido de alojamiento...</div>
+          )}
         </div>
 
         {/* Grupo: Precio */}
         <div className="py-4">
-          <button className="flex w-full items-center justify-between text-left focus:outline-none mb-4" aria-expanded="true">
-            <span className="flex items-center gap-2 font-medium text-brand-orange">
-              <span aria-hidden="true">🏷️</span> Precio
+          <button
+            className="flex w-full items-center justify-between text-left focus:outline-none group"
+            aria-expanded={openAccordions.precio}
+            onClick={() => toggleAccordion('precio')}
+          >
+            <span className={`flex items-center gap-2 font-medium transition-colors ${openAccordions.precio ? 'text-brand-orange' : 'text-brand-dark group-hover:text-brand-orange'}`}>
+              <IoPricetagOutline className="w-5 h-5 transform -scale-x-100" /> Precio
             </span>
-            <svg className="w-5 h-5 text-brand-orange transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+            {openAccordions.precio ? (
+              <ChevronUp className="w-5 h-5 text-brand-orange" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
           </button>
-          <div className="flex flex-col gap-3">
-            <input type="text" placeholder="Mínimo" className="w-full border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange" />
-            <input type="text" placeholder="Máximo" className="w-full border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange" />
-          </div>
+          {openAccordions.precio && (
+            <div className="flex flex-col gap-3 pt-4">
+              <Input
+                id="min-price"
+                placeholder="Mínimo"
+                icon={IoPricetagOutline}
+                value={minPrice}
+                onChange={handleMinPriceChange}
+              />
+              <Input
+                id="max-price"
+                placeholder="Máximo"
+                icon={IoPricetagOutline}
+                value={maxPrice}
+                onChange={handleMaxPriceChange}
+              />
+            </div>
+          )}
         </div>
       </div>
       
       {/* Botón Aplicar solo en móvil */}
       <div className="lg:hidden p-4 border-t border-gray-200 bg-white mt-auto">
-        <button onClick={onClose} className="btn-primary w-full">Aplicar filtros</button>
+        <Button variant="reserva" onClick={onClose} className="w-full">
+          Aplicar filtros
+        </Button>
       </div>
     </aside>
   );

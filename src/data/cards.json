@@ -1,0 +1,36 @@
+[
+  {"id":1,"image":"https://picsum.photos/id/1011/400/300","category":"Aventura","location":"Australia","duration":"7 días","title":"Safari en Outback","price":1200,"continente":"Oceanía"},
+  {"id":2,"image":"https://picsum.photos/id/1012/400/300","category":"Explora","location":"Nueva Zelanda","duration":"9 días","title":"Fiordos y volcanes","price":1700,"continente":"Oceanía"},
+  {"id":3,"image":"https://picsum.photos/id/1021/400/300","category":"Surf","location":"Fiyi","duration":"6 días","title":"Olas de Coral","price":1300,"continente":"Oceanía"},
+  {"id":4,"image":"https://picsum.photos/id/1022/400/300","category":"Quads","location":"Papúa Nueva Guinea","duration":"5 días","title":"Aventura en la selva","price":1100,"continente":"Oceanía"},
+  {"id":5,"image":"https://picsum.photos/id/1023/400/300","category":"Buceo","location":"Australia","duration":"8 días","title":"Gran Barrera de Coral","price":1600,"continente":"Oceanía"},
+  {"id":6,"image":"https://picsum.photos/id/1024/400/300","category":"Parapente","location":"Nueva Zelanda","duration":"4 días","title":"Vuela sobre Queenstown","price":900,"continente":"Oceanía"},
+
+  {"id":7,"image":"https://picsum.photos/id/1012/400/300","category":"Explora","location":"Argentina","duration":"5 días","title":"Glaciares de Patagonia","price":950,"continente":"América"},
+  {"id":8,"image":"https://picsum.photos/id/1018/400/300","category":"Snowboard","location":"Canadá","duration":"7 días","title":"Montañas Rocosas","price":1400,"continente":"América"},
+  {"id":9,"image":"https://picsum.photos/id/1025/400/300","category":"Rafting","location":"EEUU","duration":"6 días","title":"Rápidos del Colorado","price":1200,"continente":"América"},
+  {"id":10,"image":"https://picsum.photos/id/1026/400/300","category":"Quads","location":"México","duration":"4 días","title":"Selva Maya","price":1100,"continente":"América"},
+  {"id":11,"image":"https://picsum.photos/id/1027/400/300","category":"Buceo","location":"Belice","duration":"8 días","title":"Blue Hole","price":1600,"continente":"América"},
+  {"id":12,"image":"https://picsum.photos/id/1028/400/300","category":"Parapente","location":"Colombia","duration":"3 días","title":"Vuela sobre Medellín","price":900,"continente":"América"},
+
+  {"id":13,"image":"https://picsum.photos/id/1013/400/300","category":"Rafting","location":"Nepal","duration":"10 días","title":"Descenso del Himalaya","price":1800,"continente":"Asia"},
+  {"id":14,"image":"https://picsum.photos/id/1016/400/300","category":"Buceo","location":"Maldivas","duration":"8 días","title":"Corales y tortugas","price":1600,"continente":"Asia"},
+  {"id":15,"image":"https://picsum.photos/id/1029/400/300","category":"Surf","location":"Indonesia","duration":"6 días","title":"Olas de Bali","price":1300,"continente":"Asia"},
+  {"id":16,"image":"https://picsum.photos/id/1041/400/300","category":"Quads","location":"Tailandia","duration":"5 días","title":"Selva tailandesa","price":1100,"continente":"Asia"},
+  {"id":17,"image":"https://picsum.photos/id/1031/400/300","category":"Parapente","location":"India","duration":"4 días","title":"Vuela sobre Goa","price":900,"continente":"Asia"},
+  {"id":18,"image":"https://picsum.photos/id/1032/400/300","category":"Explora","location":"Japón","duration":"7 días","title":"Montañas de Honshu","price":1400,"continente":"Asia"},
+
+  {"id":19,"image":"https://picsum.photos/id/1014/400/300","category":"Surf","location":"Portugal","duration":"4 días","title":"Olas de Nazaré","price":700,"continente":"Europa"},
+  {"id":20,"image":"https://picsum.photos/id/1042/400/300","category":"Parapente","location":"Suiza","duration":"3 días","title":"Alpes desde el aire","price":900,"continente":"Europa"},
+  {"id":21,"image":"https://picsum.photos/id/1033/400/300","category":"Rafting","location":"Francia","duration":"6 días","title":"Rápidos del Ródano","price":1200,"continente":"Europa"},
+  {"id":22,"image":"https://picsum.photos/id/1043/400/300","category":"Quads","location":"España","duration":"5 días","title":"Montes de Andalucía","price":1100,"continente":"Europa"},
+  {"id":23,"image":"https://picsum.photos/id/1035/400/300","category":"Buceo","location":"Italia","duration":"8 días","title":"Costa Amalfitana","price":1600,"continente":"Europa"},
+  {"id":24,"image":"https://picsum.photos/id/1036/400/300","category":"Explora","location":"Noruega","duration":"7 días","title":"Fiordos noruegos","price":1400,"continente":"Europa"},
+
+  {"id":25,"image":"https://picsum.photos/id/1015/400/300","category":"Quads","location":"Marruecos","duration":"6 días","title":"Desierto del Sahara","price":1100,"continente":"África"},
+  {"id":26,"image":"https://picsum.photos/id/1020/400/300","category":"Rafting","location":"Sudáfrica","duration":"5 días","title":"Río Orange","price":1000,"continente":"África"},
+  {"id":27,"image":"https://picsum.photos/id/1037/400/300","category":"Surf","location":"Senegal","duration":"6 días","title":"Olas de Dakar","price":1300,"continente":"África"},
+  {"id":28,"image":"https://picsum.photos/id/1038/400/300","category":"Buceo","location":"Egipto","duration":"8 días","title":"Mar Rojo","price":1600,"continente":"África"},
+  {"id":29,"image":"https://picsum.photos/id/1039/400/300","category":"Parapente","location":"Kenia","duration":"4 días","title":"Vuela sobre Nairobi","price":900,"continente":"África"},
+  {"id":30,"image":"https://picsum.photos/id/1040/400/300","category":"Explora","location":"Tanzania","duration":"7 días","title":"Montañas Kilimanjaro","price":1400,"continente":"África"}
+]

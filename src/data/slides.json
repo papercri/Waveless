@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "image": "https://picsum.photos/id/1018/1920/1080",
+    "title": "Ruta por Australia",
+    "subtitle": "Si te va la aventura, no te lo puedes perder",
+    "cta": "Más información"
+  },
+  {
+    "id": 2,
+    "image": "https://picsum.photos/id/1015/1920/1080",
+    "title": "Naturaleza Salvaje",
+    "subtitle": "Desconecta de la rutina en lugares únicos",
+    "cta": "Descubrir"
+  },
+  {
+    "id": 3,
+    "image": "https://picsum.photos/id/1016/1920/1080",
+    "title": "Playas Escondidas",
+    "subtitle": "El paraíso está más cerca de lo que crees",
+    "cta": "Ver destinos"
+  }
+]
